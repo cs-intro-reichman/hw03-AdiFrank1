@@ -27,12 +27,12 @@ public class Calendar1 {
 	 		if ((dayOfWeek == 1) && (dayOfMonth == 1))
 
 	 			{debugDaysCounter++;
-	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " sunday");}
+	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");}
 
 	 		else
 	 			{
 	 				if ((dayOfWeek == 1) && (dayOfMonth != 1))
-	 	 				{System.out.println (dayOfMonth+ "/"+ month + "/" + year + " sunday");}
+	 	 				{System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");}
 
 	 				else
 	 					{System.out.println (dayOfMonth+ "/"+ month + "/" + year );}
@@ -41,7 +41,7 @@ public class Calendar1 {
 	 		advance();
 	 	}
 	 
-	 	System.out.println ("During the 20th century, " + debugDaysCounter + " sundays fell on the first day of the month");
+	 	System.out.println ("During the 20th century, " + debugDaysCounter + " Sundays fell on the first day of the month");
 
 	 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)

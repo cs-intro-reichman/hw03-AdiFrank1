@@ -31,12 +31,12 @@ public class Calendar {
 	 		if ((dayOfWeek == 1) && (dayOfMonth == 1))
 
 	 			{debugDaysCounter++;
-	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " sunday");}
+	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");}
 
 	 		else
 	 			{
 	 				if ((dayOfWeek == 1) && (dayOfMonth != 1))
-	 	 				{System.out.println (dayOfMonth+ "/"+ month + "/" + year + " sunday");}
+	 	 				{System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");}
 
 	 				else
 	 					{System.out.println (dayOfMonth+ "/"+ month + "/" + year );}
