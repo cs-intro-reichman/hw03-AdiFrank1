@@ -1,5 +1,5 @@
 /** String processing exercise 2. */
-public class UniqueChars {
+public class uniqueChars {
     public static void main(String[] args) {  
         String str = args[0];
         System.out.println(uniqueChars(str));
@@ -14,7 +14,7 @@ public class UniqueChars {
         // Replace the following statement with your code
         String z = " " ;
         boolean in= false;
-        
+
         for (int i=0;i< s.length(); i++)
         {
             String newString= s.substring (0,i);
