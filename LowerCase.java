@@ -12,23 +12,22 @@ public class LowerCase {
     public static String lowerCase(String str) {
         String ans = " " ;
 
-        int i=0;
-        while ( i < str.length())
-
-          {   char ch = str.charAt(i);
-
-              if ((ch == ' ') || (ch > 31 ) && (ch < 59) || (ch == 64) ||(ch >=97) && (ch<=122))
-              {
-               ans = ans + ch;}
-               
-            else
-                { ans = ans + (char) (str.charAt(i)+32);}
-
-
-            i++;
-
+        // #feedback: bad indentations!
+        // #feedback: better to use here for loop
+        for (int i= 0; i < str.length(); i++ )
+        {   
+            char ch = str.charAt(i);
+            // #feedback: your condition is too complicated, lets simplify it
+            if ((ch >= 'A') && (ch <= 'Z'))
+            {
+                // #feedback: x = x + n equivalent to x += n
+                ch += 32;
+            }
+            
+            ans += ch;
         }
-               return ans;
-  }
+        
+        return ans;
+      }
 
 }

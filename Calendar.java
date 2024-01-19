@@ -21,27 +21,28 @@ public class Calendar {
 	    int debugDaysCounter = 0;
 	    int selectYear = Integer.parseInt(args[0]);
 
-	    while (selectYear > year)
-	    		{advance();}
+		// #feedback: bad indentations
+	    while (selectYear > year) {
+		    advance();
+	    }
 
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
 	 	while (selectYear == year)
 	 	{
 	 		if ((dayOfWeek == 1) && (dayOfMonth == 1))
-
-	 			{debugDaysCounter++;
-	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");}
-
-	 		else
-	 			{
-	 				if ((dayOfWeek == 1) && (dayOfMonth != 1))
-	 	 				{System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");}
-
-	 				else
-	 					{System.out.println (dayOfMonth+ "/"+ month + "/" + year );}
-	 			}
-
+			{
+				debugDaysCounter++;
+	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");
+			}
+	 		else {
+	 			if ((dayOfWeek == 1) && (dayOfMonth != 1)) {
+	 	 			System.out.println (dayOfMonth+ "/"+ month + "/" + year + " Sunday");
+				}
+	 			else {
+	 				System.out.println (dayOfMonth+ "/"+ month + "/" + year );
+				}
+	 		}
 	 		advance();
 	 	}
 	 
@@ -100,26 +101,29 @@ public class Calendar {
 	// All the other months have 31 days.
 	private static int nDaysInMonth(int month, int year) {
 		// Replace the following statement with your code
-				int m = 0;
+		// #feedback: give meaningful name
+		int days = 0;
 
-		
-			 if (month==4 || month==6 || month== 11 || month == 9)
-
-				    m = 30;
-			else 
-
-					 if (month == 2 && isLeapYear(year) == true)
-					  		m = 29 ;
-					else
-					 		if (month == 2 && isLeapYear(year) == false)
-					 				m = 28; 
-					 		else
-
-					 				m=31;
-
-				return m;	
+		if (month==4 || month==6 || month== 11 || month == 9) {
+			days = 30;
+		}
+		// #feedback: make your condition orders more clear
+		else if (month == 2)
+		{
+			// #feedback: that way you avoid computing isLeapYear twice
+			if (isLeapYear(year))
+			{
+				days = 29;
 			}
-	
+			else {
+				days = 28;
+			}
+		}				
+		else {
+			days = 31;
+		}
+		return days;	
 	}
+}
 
 

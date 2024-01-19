@@ -4,8 +4,9 @@
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // The computation tolerance (estimation error)
-	static int iterationCounter1;
-	static int iterationCounter2;    // Monitors the efficiency of the calculation
+	// #feedback: you should always declare initalized value even if the expected default provide the same value
+	static int iterationCounter1 = 0;
+	static int iterationCounter2 = 0;    // Monitors the efficiency of the calculation
 	
     /** 
      * Gets the loan data and computes the periodical payment.
@@ -43,11 +44,13 @@ public class LoanCalc {
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
     	double g = loan/n ;
-    	int counter1 = 0 ;
+	// #feedback: what the porpuse of this variable?
     	while (endBalance(loan, rate, n, g) >= epsilon ) 
-    			{g+= epsilon;
-    			iterationCounter1++;
-    		}
+	{
+		// #feedback: payy attention for indentations
+		g += epsilon;
+    		iterationCounter1++;
+    	}
 
     	return g;
     }
@@ -65,15 +68,20 @@ public class LoanCalc {
     	double l = 1.0;
     	double g = (l+h)/2;
     	int counter2 = 0 ;
+	// #feedback: bad indentations
     	while (h-l > epsilon)
-    			{if ((endBalance(loan,rate,n,g)*endBalance(loan,rate,n,l))>0)
-    				l=g;
-    			else
-    				h=g;
-    			g=(l+h)/2;
-
-    			iterationCounter2++;
-    		}
+    	{
+		// #feedback: always use {} to scope the content of the condition - even when there is only one line of code within
+		if ((endBalance(loan,rate,n,g)*endBalance(loan,rate,n,l))>0) {
+    			l=g;
+		}
+    		else {
+    			h=g;
+		}
+    		
+		g=(l+h)/2;
+    		iterationCounter2++;
+    	}
     		
     	return g;
     }
